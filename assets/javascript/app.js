@@ -52,12 +52,10 @@ $(document).on('click', 'button', function() {
             var thisRating = $("<p>").text("Rating: " + rating);
             var thisImg = $("<img>");
 
-            thisImg.attr({
-                "src": showData[i].images.fixed_height_still_url,
-                "data-still": showData[i].images.fixed_height_still_url,
-                "data-animate": showData[i].images.fixed_height_url,
-                "data-state": 'still'
-            });
+            thisImg.attr("src", showData[i].images.fixed_height_still.url)
+                .attr("data-still", showData[i].images.fixed_height_still.url)
+                .attr("data-animate", showData[i].images.fixed_height.url)
+                .attr("data-state", 'still');
             thisImg.addClass("showImage");
 
             showgifDiv.append(thisRating);
