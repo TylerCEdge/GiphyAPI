@@ -56,7 +56,7 @@ $(document).on('click', 'button', function() {
                 .attr("data-still", showData[i].images.fixed_height_still.url)
                 .attr("data-animate", showData[i].images.fixed_height.url)
                 .attr("data-state", 'still');
-            thisImg.addClass("showImage");
+            thisImg.addClass("gif");
 
             showgifDiv.append(thisRating);
             showgifDiv.append(thisImg);
