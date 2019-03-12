@@ -12,3 +12,21 @@ $(document).on("click", ".renderedButtons", function () {
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + showName + "&" + apikey + "&limit=10";
     getGifs(queryURL);
 });
+
+$(document).on("click", ".gif", function() {
+    var state = $(this).data('state');
+
+    if (state == "still") {
+        $(this).attr('src', $(this).data('animate'));
+        .data('state', 'animate');
+    } else {
+        $(this).attr('src', $(this).data('still'));
+        .data('state', 'still')
+    }
+
+});
+
+
+
+
+
