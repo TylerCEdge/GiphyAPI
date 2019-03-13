@@ -35,22 +35,22 @@ $(document).ready(function() {
         var thisShow = $(this).attr('data-name');
         var apiKey = "api_key=0QUd0TfVGJQSkxletkWjnagHeQSgwTU4";
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + thisShow + "&" + apiKey + "&limit=10";
-        console.log(thisShow);
-        console.log(queryURL);
+        // console.log(thisShow);
+        // console.log(queryURL);
     
         $.ajax({
             url: queryURL,
             method: 'GET'
         }).then(function(response) {
-            console.log("response:");
-            console.log(response);
+            // console.log("response:");
+            // console.log(response);
             var allShows = response.data;
-            console.log(allShows);
+            // console.log(allShows);
     
             for (var i = 0; i < allShows.length; i++) {
                 //Storing the current show object inside variable "thisShow"
                 thisShow = allShows[i];
-                console.log(thisShow);
+                // console.log(thisShow);
                 //Creating a div to store all of the details
                 showGif = $("<div>").addClass("gif");
                 thisRating = $("<div>").text("Rating: " + thisShow.rating);
