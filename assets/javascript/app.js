@@ -54,10 +54,10 @@ $(document).ready(function() {
                 //Creating a div to store all of the details
                 showGif = $("<div>");
                 thisRating = $("<div>").text("Rating: " + thisShow.rating);
-                thisImage = $("<img>").attr({"src": thisShow.images.fixed_height.url,
-                                             "state": "animate",
+                thisImage = $("<img>").attr({"src": thisShow.images.fixed_height_still.url,
                                              "data-still": thisShow.images.fixed_height_still.url,
-                                             "data-animate": thisShow.images.fixed_height.url})
+                                             "data-animate": thisShow.images.fixed_height.url,
+                                             "state": "still"})
                 .addClass("gif");
                 //Appending the details to the new div
                 showGif.append(thisRating, thisImage);
@@ -78,12 +78,12 @@ $(document).ready(function() {
     $(document).on("click", ".gif", function() {
         var state = $(this).data('state');
     
-        if (state == "still") {
-            $(this).attr('src', $(this).data('animate'))
-            .data('state', 'animate');
-        } else {
+        if (state == "animate") {
             $(this).attr('src', $(this).data('still'))
             .data('state', 'still');
+        } else {
+            $(this).attr('src', $(this).data('animate'))
+            .data('state', 'animate');
         }
     
     });
