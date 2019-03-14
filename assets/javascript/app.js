@@ -52,9 +52,13 @@ $(document).ready(function() {
                 thisShow = allShows[i];
                 // console.log(thisShow);
                 //Creating a div to store all of the details
-                showGif = $("<div>").addClass("gif");
+                showGif = $("<div>");
                 thisRating = $("<div>").text("Rating: " + thisShow.rating);
-                thisImage = $("<img>").attr("src", thisShow.images.fixed_height.url);
+                thisImage = $("<img>").attr({"src": thisShow.images.fixed_height.url,
+                                             "state": "animate",
+                                             "data-still": thisShow.images.fixed_height_still.url,
+                                             "data-animate": thisShow.images.fixed_height.url})
+                .addClass("gif");
                 //Appending the details to the new div
                 showGif.append(thisRating, thisImage);
                 //Appending the new div to $("#gifs-here")
